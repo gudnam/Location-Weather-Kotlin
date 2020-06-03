@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="10dp"
@@ -15,52 +15,54 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TableLayout
-            android:id="@+id/tl_local_weather"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:stretchColumns="3,5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-
-            <View style="@style/HorizontalLineView" />
-
-            <TableRow
+            <TableLayout
+                android:id="@+id/tl_local_weather"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:stretchColumns="3,5">
 
-                <View style="@style/VerticalLineView" />
 
-                <TextView
-                    style="@style/ContentTextView"
-                    android:text="Local" />
+                <View style="@style/HorizontalLineView" />
 
-                <View style="@style/VerticalLineView" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    style="@style/ContentTextView"
-                    android:text="Today" />
+                    <View style="@style/VerticalLineView" />
 
-                <View
-                    android:id="@+id/view"
-                    style="@style/VerticalLineView" />
+                    <TextView
+                        style="@style/ContentTextView"
+                        android:text="Local" />
 
-                <TextView
-                    style="@style/ContentTextView"
-                    android:text="Tomorrow" />
+                    <View style="@style/VerticalLineView" />
 
-                <View style="@style/VerticalLineView" />
-            </TableRow>
+                    <TextView
+                        style="@style/ContentTextView"
+                        android:text="Today" />
 
-            <View style="@style/HorizontalLineView" />
+                    <View
+                        android:id="@+id/view"
+                        style="@style/VerticalLineView" />
 
-        </TableLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        style="@style/ContentTextView"
+                        android:text="Tomorrow" />
+
+                    <View style="@style/VerticalLineView" />
+                </TableRow>
+
+                <View style="@style/HorizontalLineView" />
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
