@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.magulab.localweather.network.data.LocalWeatherDatas
 import com.magulab.localweather.ui.main.fragment.data.LocalWeatherUIData
 import com.magulab.localweather.ui.main.fragment.data.WeatherData
+import kotlin.math.floor
 
 
 fun <T> Activity.moveTo(cls: Class<T>) {
@@ -20,11 +21,22 @@ fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean = false): View {
 }
 
 fun String.toTemp(): String {
-    return "$this°C"
+    return try {
+        val floatValue = this.toFloat()
+        "${floor(floatValue).toInt()}°C"
+    } catch (e: NumberFormatException) {
+        "$this°C"
+    }
 }
 
 fun String.toHumidity(): String {
-    return "$this%"
+    return try {
+        val floatValue = this.toFloat()
+        Log.i("TEST", "$floatValue")
+        "${floor(floatValue).toInt()}%"
+    } catch (e: NumberFormatException) {
+        return "$this%"
+    }
 }
 
 fun LocalWeatherDatas.toUIDataList(): LocalWeatherUIData {

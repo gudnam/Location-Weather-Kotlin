@@ -26,8 +26,7 @@
                 android:id="@+id/tl_local_weather"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:stretchColumns="3,5">
+                android:orientation="horizontal">
 
 
                 <View style="@style/HorizontalLineView" />
@@ -40,12 +39,14 @@
 
                     <TextView
                         style="@style/ContentTextView"
+                        android:layout_weight="2"
                         android:text="Local" />
 
                     <View style="@style/VerticalLineView" />
 
                     <TextView
                         style="@style/ContentTextView"
+                        android:layout_weight="5"
                         android:text="Today" />
 
                     <View
@@ -54,6 +55,7 @@
 
                     <TextView
                         style="@style/ContentTextView"
+                        android:layout_weight="5"
                         android:text="Tomorrow" />
 
                     <View style="@style/VerticalLineView" />
