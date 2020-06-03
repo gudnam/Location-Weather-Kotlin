@@ -10,8 +10,7 @@
 
     <TextView
         android:id="@+id/tv_local"
-        style="@style/LocalTextView"
-        android:text="seoul" />
+        style="@style/LocalTextView" />
 
     <View style="@style/VerticalLineView" />
 
@@ -93,7 +92,7 @@
             app:srcCompat="@drawable/s" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tv_tomorrow_state_name"
             style="@style/StateNameTextView"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
@@ -109,8 +108,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="4°C"
-            app:layout_constraintStart_toStartOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintStart_toStartOf="@+id/tv_tomorrow_state_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tomorrow_state_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

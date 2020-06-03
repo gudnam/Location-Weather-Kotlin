@@ -3,9 +3,10 @@ package com.magulab.localweather.ui.main.fragment
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.magulab.localweather.common.toUIDataList
 import com.magulab.localweather.network.RestAPI
 import com.magulab.localweather.network.data.LocalWeatherDatas
-import com.magulab.localweather.network.data.LocationData
+import com.magulab.localweather.ui.main.fragment.data.LocalWeatherUIData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -18,8 +19,8 @@ class LocalWeatherViewModel: ViewModel() {
 
     var disposable = CompositeDisposable()
 
-    private var localWeatherDataList = MutableLiveData<LocalWeatherUIData>()
-    fun bindLocalWeatherDataList() = localWeatherDataList
+    private var localWeatherData = MutableLiveData<LocalWeatherUIData>()
+    fun bindLocalWeatherData() = localWeatherData
 
 
     fun initData() {
@@ -63,10 +64,10 @@ class LocalWeatherViewModel: ViewModel() {
             .unsubscribeOn(Schedulers.io())
             .onErrorReturn {
                 Log.e(TAG, "onErrorReturn : " + it.message)
-                LocalWeatherDatas(arrayListOf())
+                LocalWeatherDatas(arrayListOf(), "unknown title")
             }
             .subscribe { result ->
-                Log.i(TAG,"$result")
+                localWeatherData.value = result.toUIDataList()
             }
             .addTo(disposable)
     }
