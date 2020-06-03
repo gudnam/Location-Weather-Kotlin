@@ -9,7 +9,7 @@
     <View style="@style/VerticalLineView" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_local"
         style="@style/LocalTextView"
         android:text="seoul" />
 

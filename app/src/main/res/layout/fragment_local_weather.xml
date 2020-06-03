@@ -39,14 +39,12 @@
                 <View style="@style/VerticalLineView" />
 
                 <TextView
-                    android:id="@+id/textView2"
                     style="@style/ContentTextView"
                     android:text="Local" />
 
                 <View style="@style/VerticalLineView" />
 
                 <TextView
-                    android:id="@+id/textView3"
                     style="@style/ContentTextView"
                     android:text="Today" />
 
@@ -55,7 +53,6 @@
                     style="@style/VerticalLineView" />
 
                 <TextView
-                    android:id="@+id/textView4"
                     style="@style/ContentTextView"
                     android:text="Tomorrow" />
 
