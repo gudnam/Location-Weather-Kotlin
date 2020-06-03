@@ -46,6 +46,9 @@ class LocalWeatherFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         viewModel.destroyViewModel()
+        activity?.let {
+            it.finish()
+        }
     }
 
     private fun initView() {
