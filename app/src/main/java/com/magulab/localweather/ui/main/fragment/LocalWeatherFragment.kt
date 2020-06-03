@@ -52,6 +52,7 @@ class LocalWeatherFragment : Fragment() {
     }
 
     private fun initView() {
+        swipe.isRefreshing = true
         tl_local_weather.removeAllViews()
         val row = layoutInflater.inflate(R.layout.item_subject, null, false)
         val topLine = getLineView()
