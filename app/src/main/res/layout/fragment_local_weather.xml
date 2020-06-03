@@ -5,4 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <TableLayout
+            android:id="@+id/tl_local_weather"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:stretchColumns="3,5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <View style="@style/HorizontalLineView" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View style="@style/VerticalLineView" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/ContentTextView"
+                    android:text="Local" />
+
+                <View style="@style/VerticalLineView" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/ContentTextView"
+                    android:text="Today" />
+
+                <View
+                    android:id="@+id/view"
+                    style="@style/VerticalLineView" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/ContentTextView"
+                    android:text="Tomorrow" />
+
+                <View style="@style/VerticalLineView" />
+            </TableRow>
+
+            <View style="@style/HorizontalLineView" />
+
+        </TableLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View style="@style/VerticalLineView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/LocalTextView"
+        android:text="seoul" />
+
+    <View style="@style/VerticalLineView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_today_weather_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/s" />
+
+        <TextView
+            android:id="@+id/tv_today_state_name"
+            style="@style/StateNameTextView"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="Heavy Rain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_today_weather_img"
+            app:layout_constraintTop_toTopOf="@+id/iv_today_weather_img" />
+
+        <TextView
+            android:id="@+id/tv_today_temp"
+            style="@style/TempTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="4°C"
+            app:layout_constraintStart_toStartOf="@+id/tv_today_state_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_today_state_name" />
+
+        <TextView
+            android:id="@+id/tv_today_humidity"
+            style="@style/HumidityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="65%"
+            app:layout_constraintStart_toEndOf="@+id/tv_today_temp"
+            app:layout_constraintTop_toTopOf="@+id/tv_today_temp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view"
+        style="@style/VerticalLineView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_tomorrow_humidity"
+            style="@style/HumidityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="65%"
+            app:layout_constraintStart_toEndOf="@+id/tv_tomorrow_temp"
+            app:layout_constraintTop_toTopOf="@+id/tv_tomorrow_temp" />
+
+        <ImageView
+            android:id="@+id/iv_tomorrow_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/s" />
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/StateNameTextView"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="Heavy Rain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_tomorrow_weather"
+            app:layout_constraintTop_toTopOf="@+id/iv_tomorrow_weather" />
+
+        <TextView
+            android:id="@+id/tv_tomorrow_temp"
+            style="@style/TempTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="4°C"
+            app:layout_constraintStart_toStartOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View style="@style/VerticalLineView" />
+</TableRow>
