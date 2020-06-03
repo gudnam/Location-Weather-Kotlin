@@ -32,7 +32,6 @@ fun String.toTemp(): String {
 fun String.toHumidity(): String {
     return try {
         val floatValue = this.toFloat()
-        Log.i("TEST", "$floatValue")
         "${floor(floatValue).toInt()}%"
     } catch (e: NumberFormatException) {
         return "$this%"

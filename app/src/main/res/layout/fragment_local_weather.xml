@@ -5,66 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginBottom="40dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TableLayout
-                android:id="@+id/tl_local_weather"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-
-                <View style="@style/HorizontalLineView" />
-
-                <TableRow
+                <TableLayout
+                    android:id="@+id/tl_local_weather"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <View style="@style/VerticalLineView" />
 
-                    <TextView
-                        style="@style/ContentTextView"
-                        android:layout_weight="2"
-                        android:text="Local" />
+                    <View style="@style/HorizontalLineView" />
 
-                    <View style="@style/VerticalLineView" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        style="@style/ContentTextView"
-                        android:layout_weight="5"
-                        android:text="Today" />
+                        <View style="@style/VerticalLineView" />
 
-                    <View
-                        android:id="@+id/view"
-                        style="@style/VerticalLineView" />
+                        <TextView
+                            style="@style/ContentTextView"
+                            android:layout_weight="2"
+                            android:text="Local" />
 
-                    <TextView
-                        style="@style/ContentTextView"
-                        android:layout_weight="5"
-                        android:text="Tomorrow" />
+                        <View style="@style/VerticalLineView" />
 
-                    <View style="@style/VerticalLineView" />
-                </TableRow>
+                        <TextView
+                            style="@style/ContentTextView"
+                            android:layout_weight="5"
+                            android:text="Today" />
 
-                <View style="@style/HorizontalLineView" />
+                        <View
+                            android:id="@+id/view"
+                            style="@style/VerticalLineView" />
 
-            </TableLayout>
-        </LinearLayout>
-    </ScrollView>
+                        <TextView
+                            style="@style/ContentTextView"
+                            android:layout_weight="5"
+                            android:text="Tomorrow" />
+
+                        <View style="@style/VerticalLineView" />
+                    </TableRow>
+
+                    <View style="@style/HorizontalLineView" />
+
+                </TableLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

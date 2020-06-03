@@ -34,6 +34,7 @@ class LocalWeatherFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        initView()
         setEvent()
     }
 
@@ -45,6 +46,31 @@ class LocalWeatherFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         viewModel.destroyViewModel()
+    }
+
+    private fun initView() {
+        tl_local_weather.removeAllViews()
+        val row = layoutInflater.inflate(R.layout.item_subject, null, false)
+        val topLine = getLineView()
+        val bottomLine = getLineView()
+        tl_local_weather.addView(topLine)
+        tl_local_weather.addView(row)
+        tl_local_weather.addView(bottomLine)
+    }
+
+    private fun setEvent() {
+        swipe.setOnRefreshListener {
+            initView()
+            viewModel.initData()
+        }
+    }
+
+    private fun bindViewModel() {
+        viewModel.bindLocalWeatherData().observe(viewLifecycleOwner, Observer {
+            Log.i(TAG, "$it")
+            addWeatherItem(it)
+            swipe.isRefreshing = false
+        })
     }
 
     private fun addWeatherItem(weatherData: LocalWeatherUIData) {
@@ -66,16 +92,6 @@ class LocalWeatherFragment : Fragment() {
 
         tl_local_weather.addView(row)
         tl_local_weather.addView(line)
-    }
-
-    private fun setEvent() {
-    }
-
-    private fun bindViewModel() {
-        viewModel.bindLocalWeatherData().observe(viewLifecycleOwner, Observer {
-            Log.i(TAG, "$it")
-            addWeatherItem(it)
-        })
     }
 
     private fun getLineView(): View {
